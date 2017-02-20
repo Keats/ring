@@ -538,9 +538,7 @@ fn compile(file: &str, target_info: &TargetInfo, mut out_dir: PathBuf,
             ("macos", _) => c.flag("-gfull"),
             _ => c.flag("-g3"),
         };
-        if env::var("OPT_LEVEL").unwrap() == "0" {
-            let _ = c.define("DEBUG", None);
-        } else {
+        if env::var("OPT_LEVEL").unwrap() != "0" {
             let _ = c.define("NDEBUG", None);
         }
         let mut c = c.get_compiler().to_command();
