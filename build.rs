@@ -238,7 +238,6 @@ const RING_BUILD_FILE: &'static [&'static str] = &["build.rs"];
 const C_FLAGS: &'static [&'static str] =
     &["-std=c1x", // GCC 4.6 requires "c1x" instead of "c11"
       "-Wbad-function-cast",
-      "-Wmissing-field-initializers",
       "-Wmissing-prototypes",
       "-Wnested-externs",
       "-Wstrict-prototypes"];
